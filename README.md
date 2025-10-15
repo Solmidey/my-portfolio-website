@@ -1,22 +1,29 @@
-# KamiKaiten Portfolio
+# Immersive Portfolio Website
 
-This repository contains the source for KamiKaiten's personal portfolio website. It highlights Solidity engineering, Python development, and day trading expertise with a resume snapshot and project showcase.
+A single-page, highly visual portfolio experience designed to showcase professional achievements, GitHub projects, and dimensional design explorations.
 
-## Getting Started
+## Features
 
-Open `index.html` in your browser or serve the site locally:
+- **3D hero cube** with animated faces highlighting skill keywords.
+- **Ambient gradient lighting** and floating orbs to set a cinematic mood.
+- **Project grid** with interactive tilt motion for each GitHub repository highlight.
+- **Dimensional gallery** featuring 3D-inspired concept cards.
+- **Responsive layout** with adaptive navigation and accessible semantics.
 
-```bash
-python -m http.server 8000
-```
+## Getting started
 
-Then visit [http://localhost:8000](http://localhost:8000) to view the site.
+1. Clone the repository:
 
-## Customization
+   ```bash
+   git clone <repository-url>
+   ```
 
-- Update project links and contact details directly in `index.html`.
-- Adjust styling in `styles.css` to match future branding or color palettes.
+2. Open `index.html` in your browser to explore the experience.
 
-## License
+## Customisation tips
 
-This project is distributed under the MIT License.
+- Replace "Your Name" with your own branding in `index.html`.
+- Update the project cards with links to your actual GitHub repositories.
+- Swap the copy across sections to reflect your voice, experience, and goals.
+
+Feel free to extend the gallery with real prototypes or integrate frameworks like Three.js for even richer 3D interactions.

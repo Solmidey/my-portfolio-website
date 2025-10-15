@@ -1,245 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KamiKaiten | Solidity Engineer, Python Dev & Daytrader</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Immersive Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="hero">
-    <nav class="nav">
-      <div class="logo">Kami<span>Kaiten</span></div>
-      <ul class="nav-links">
-        <li><a href="#portfolio">Builds</a></li>
-        <li><a href="#resume">Resume</a></li>
-        <li><a href="#contact">Connect</a></li>
+  <div class="backdrop" aria-hidden="true">
+    <div class="orb orb--one"></div>
+    <div class="orb orb--two"></div>
+    <div class="orb orb--three"></div>
+  </div>
+  <header class="site-header">
+    <div class="brand">
+      <span class="brand__symbol">//</span>
+      <span class="brand__name">Your Name</span>
+    </div>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <button class="site-nav__toggle" aria-expanded="false" aria-controls="site-nav-menu">
+        <span class="sr-only">Toggle navigation</span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul id="site-nav-menu" class="site-nav__menu">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-    <div class="hero-grid">
-      <div class="hero-copy">
-        <p class="tag">Solidity Engineer · Python Dev · Daytrader</p>
-        <h1>Engineering resilient smart contracts and market-aware automation.</h1>
-        <p class="subtitle">From Base to Monad and zkSync, I ship performant onchain systems, Python-powered infrastructure, and trading strategies tuned for volatility.</p>
-        <div class="cta-group">
-          <a class="btn primary" href="#portfolio">Explore my work</a>
-          <a class="btn ghost" href="https://warpcast.com/KamiKaiten" target="_blank" rel="noreferrer">Farcaster</a>
-        </div>
-        <div class="achievement">
-          <span class="dot"></span>
-          <span>Base Builders Rewards recipient · Deployed on Monad &amp; zkSync</span>
-        </div>
-      </div>
-      <div class="hero-visual">
-        <div class="orbital">
-          <div class="orbit orbit--solidity">
-            <span>Smart Contract Audits</span>
-          </div>
-          <div class="orbit orbit--python">
-            <span>Algo Bots</span>
-          </div>
-          <div class="orbit orbit--trading">
-            <span>Market Signals</span>
-          </div>
-          <div class="core">KamiKaiten</div>
-        </div>
-      </div>
-    </div>
   </header>
 
   <main>
-    <section id="portfolio" class="section portfolio">
-      <div class="section-heading">
-        <h2>Selected Builds</h2>
-        <p>Representative work spanning L2 deployments, automation, and trading intelligence.</p>
+    <section class="hero" id="hero">
+      <div class="hero__content">
+        <h1 class="hero__title">Crafting Immersive Digital Experiences</h1>
+        <p class="hero__subtitle">
+          I build high-impact products with delightful visuals, resilient architecture,
+          and thoughtful user experiences. Explore my world of code, creativity, and curiosity.
+        </p>
+        <div class="hero__actions">
+          <a class="button button--primary" href="#projects">View Projects</a>
+          <a class="button button--ghost" href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
       </div>
-      <div class="card-grid">
-        <article class="card">
-          <div class="card-tag">Solidity · Base</div>
-          <h3>Base Yield Router</h3>
-          <p>A modular smart contract system on Base that optimizes liquidity routing for onchain treasuries while tracking risk parameters in real time.</p>
-          <ul>
-            <li>Earned Base Builders Rewards for capital-efficient design</li>
-            <li>Upgradeable proxy architecture with circuit breakers</li>
-          </ul>
-          <a class="card-link" href="https://github.com/KamiKaiten/base-yield-router" target="_blank" rel="noreferrer">View repository →</a>
-        </article>
+      <div class="hero__visual" aria-hidden="true">
+        <div class="cube">
+          <div class="cube__face cube__face--front">JS</div>
+          <div class="cube__face cube__face--back">CSS</div>
+          <div class="cube__face cube__face--right">HTML</div>
+          <div class="cube__face cube__face--left">UI</div>
+          <div class="cube__face cube__face--top">3D</div>
+          <div class="cube__face cube__face--bottom">UX</div>
+        </div>
+        <div class="hero__glow"></div>
+      </div>
+    </section>
 
-        <article class="card">
-          <div class="card-tag">Python · Quant</div>
-          <h3>Serpentine Signals</h3>
-          <p>A Python-driven trade execution engine ingesting DeFi orderflow and macro feeds to rebalance perp positions with machine-tuned risk.</p>
-          <ul>
-            <li>Async architecture with FastAPI control surface</li>
-            <li>Backtesting suite covering 3,000+ permutations</li>
-          </ul>
-          <a class="card-link" href="https://github.com/KamiKaiten/serpentine-signals" target="_blank" rel="noreferrer">View repository →</a>
+    <section class="panel" id="about">
+      <div class="panel__heading">
+        <span class="eyebrow">About</span>
+        <h2>Design-minded engineer focused on timeless craftsmanship.</h2>
+      </div>
+      <div class="panel__grid">
+        <article class="panel-card">
+          <h3>Philosophy</h3>
+          <p>
+            I blend storytelling and technology to design interfaces that resonate. Every component is
+            crafted to feel intuitive, authentic, and inspiring.
+          </p>
         </article>
-
-        <article class="card">
-          <div class="card-tag">zkSync · Monad</div>
-          <h3>Cross-L2 Vault Network</h3>
-          <p>Composable vault contracts bridging Monad testnet and zkSync Era, focusing on verifiable proofs of reserves and deterministic execution.</p>
-          <ul>
-            <li>Zero-knowledge proof attestations with succinct verifiers</li>
-            <li>Gas-optimized state sync with batched updates</li>
-          </ul>
-          <a class="card-link" href="https://github.com/KamiKaiten/cross-l2-vaults" target="_blank" rel="noreferrer">View repository →</a>
+        <article class="panel-card">
+          <h3>Expertise</h3>
+          <p>
+            Full-stack web development, creative coding, design systems, accessibility, product strategy,
+            immersive 3D experiences, and data visualisation.
+          </p>
+        </article>
+        <article class="panel-card">
+          <h3>Focus for 2024</h3>
+          <p>
+            Expanding frontier knowledge in WebGL, machine learning powered UX, and sustainable design practices
+            to craft inclusive products at scale.
+          </p>
         </article>
       </div>
     </section>
 
-    <section class="section split" aria-labelledby="craft-title">
-      <div class="split-copy">
-        <h2 id="craft-title">Craft fueled by research, rigor, and real-time markets.</h2>
-        <p>I blend protocol-level craftsmanship with data-driven iteration. Years in the market taught me to architect systems that survive volatility, while my Solidity and Python stacks keep the pipelines fast, auditable, and future-proof.</p>
-        <div class="metrics">
-          <div class="metric">
-            <span class="metric-value">$250M+</span>
-            <span class="metric-label">Volume safeguarded via onchain risk controls</span>
-          </div>
-          <div class="metric">
-            <span class="metric-value">8ms</span>
-            <span class="metric-label">Average signal latency across trading venues</span>
-          </div>
-          <div class="metric">
-            <span class="metric-value">3</span>
-            <span class="metric-label">Layer 2s shipped to production</span>
-          </div>
-        </div>
+    <section class="timeline" id="experience">
+      <div class="panel__heading">
+        <span class="eyebrow">Experience</span>
+        <h2>Shaping products for ambitious teams.</h2>
       </div>
-      <div class="split-visual">
-        <div class="terminal-card">
-          <header>analytics.py</header>
-          <pre><code>def pnl_heatmap(trades):
-    return (
-        trades
-        .groupby(["venue", "strategy"])
-        .apply(lambda df: df.pnl.cumsum())
-    )
-
-portfolio_risk = pnl_heatmap(trade_logs)
-rebalance(vaults, threshold=0.03)
-</code></pre>
-        </div>
-        <div class="chain-card">
-          <h3>Networks</h3>
-          <ul>
-            <li><span>Base</span><span>Production deployment</span></li>
-            <li><span>Monad</span><span>Mainnet-ready prototypes</span></li>
-            <li><span>zkSync Era</span><span>Zero-knowledge vault operations</span></li>
-          </ul>
-        </div>
+      <div class="timeline__items">
+        <article class="timeline-item">
+          <div class="timeline-item__marker"></div>
+          <div class="timeline-item__content">
+            <h3>Lead Product Engineer · Aurora Labs</h3>
+            <p class="timeline-item__meta">2022 — Present</p>
+            <p>
+              Driving strategy and delivery for a platform used by 2M+ creators. Led the transition to a modular
+              design system and orchestrated 3D visualisations for live data dashboards.
+            </p>
+          </div>
+        </article>
+        <article class="timeline-item">
+          <div class="timeline-item__marker"></div>
+          <div class="timeline-item__content">
+            <h3>Senior UX Engineer · Nebula Collective</h3>
+            <p class="timeline-item__meta">2019 — 2022</p>
+            <p>
+              Crafted story-driven, interactive product tours with rich motion design and accessibility-first workflows.
+              Shipped scalable component libraries adopted across five product suites.
+            </p>
+          </div>
+        </article>
+        <article class="timeline-item">
+          <div class="timeline-item__marker"></div>
+          <div class="timeline-item__content">
+            <h3>Creative Developer · Freelance</h3>
+            <p class="timeline-item__meta">2016 — 2019</p>
+            <p>
+              Partnered with global brands to launch immersive campaigns using Three.js, AR experiences, and spatial audio.
+              Recognised with 4 Awwwards honours and a CSS Design Award.
+            </p>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section id="resume" class="section resume">
-      <div class="section-heading">
-        <h2>Resume Snapshot</h2>
-        <p>Contract-ready blend of protocol engineering, Python automation, and trading acumen.</p>
+    <section class="panel panel--projects" id="projects">
+      <div class="panel__heading">
+        <span class="eyebrow">Projects</span>
+        <h2>Selected GitHub explorations.</h2>
       </div>
-      <div class="resume-grid">
-        <div class="resume-column">
-          <h3>Core Skills</h3>
-          <ul class="pill-list">
-            <li>Solidity &amp; Foundry</li>
-            <li>Smart Contract Security</li>
-            <li>Python (FastAPI, Pandas, AsyncIO)</li>
-            <li>Strategy Backtesting &amp; Execution</li>
-            <li>DeFi Protocol Design</li>
-            <li>Onchain Analytics</li>
-          </ul>
-
-          <h3>Tooling &amp; Stack</h3>
-          <ul class="pill-list">
-            <li>Hardhat · Foundry</li>
-            <li>Docker · Terraform</li>
-            <li>Postgres · Redis · Arrow</li>
-            <li>Grafana · Dune · Flipside</li>
-            <li>Rust basics for runtime performance</li>
-            <li>GitHub Actions · CI/CD</li>
-          </ul>
-        </div>
-        <div class="resume-column">
-          <h3>Experience Highlights</h3>
-          <div class="timeline">
-            <div class="timeline-item">
-              <span class="timeline-date">2023 — Present</span>
-              <h4>Independent Solidity Engineer &amp; Quant Consultant</h4>
-              <p>Design and audit DeFi protocols, orchestrate cross-chain liquidity flows, and build execution engines for professional trading desks.</p>
-              <ul>
-                <li>Shipped production systems on Base, Monad, and zkSync</li>
-                <li>Delivered risk dashboards for funds managing 9-figure exposure</li>
-              </ul>
-            </div>
-            <div class="timeline-item">
-              <span class="timeline-date">2021 — 2023</span>
-              <h4>Lead Python Engineer · Algo Collective</h4>
-              <p>Architected low-latency trading infrastructure with hybrid onchain/offchain execution and automated treasury management.</p>
-              <ul>
-                <li>Cut slippage costs by 27% through adaptive routing</li>
-                <li>Implemented circuit breaker simulations for tail-risk hedging</li>
-              </ul>
-            </div>
-            <div class="timeline-item">
-              <span class="timeline-date">2018 — 2021</span>
-              <h4>Senior Daytrader · Self Directed</h4>
-              <p>Actively traded derivatives and spot markets, refining quantitative methods that now power automated DeFi strategies.</p>
-              <ul>
-                <li>Developed proprietary indicator suite with Python</li>
-                <li>Mentored traders in risk discipline and data literacy</li>
-              </ul>
-            </div>
+      <div class="project-grid">
+        <article class="project-card" data-tilt>
+          <div class="project-card__inner">
+            <h3>PulseWave</h3>
+            <p>An open-source WebGL audio visualiser with generative shaders and live performance mode.</p>
+            <a href="https://github.com/" class="project-card__link" target="_blank" rel="noreferrer">View Repository</a>
           </div>
-        </div>
-        <div class="resume-column">
-          <h3>Credentials &amp; Recognition</h3>
-          <ul class="pill-list">
-            <li>Base Builders Rewards · 2024</li>
-            <li>Top 5 finalist · Monad Launch Camp</li>
-            <li>zkSync Era Pioneer Program Alum</li>
-            <li>Published technical writer on smart contract security</li>
-            <li>Speaker · L2 Rollup Summit</li>
-          </ul>
-
-          <h3>Availability</h3>
-          <p>Open to protocol engineering roles, quant developer engagements, and high-impact smart contract audits. Remote-first with travel flexibility.</p>
-          <a class="btn primary" href="mailto:hello@kamikaiten.dev">Request full resume</a>
-        </div>
+        </article>
+        <article class="project-card" data-tilt>
+          <div class="project-card__inner">
+            <h3>Atlas UI</h3>
+            <p>A composable design system built with accessibility, theming, and developer happiness in mind.</p>
+            <a href="https://github.com/" class="project-card__link" target="_blank" rel="noreferrer">View Repository</a>
+          </div>
+        </article>
+        <article class="project-card" data-tilt>
+          <div class="project-card__inner">
+            <h3>Voyager</h3>
+            <p>Interactive globe visualisation that layers satellite data, weather patterns, and travel analytics.</p>
+            <a href="https://github.com/" class="project-card__link" target="_blank" rel="noreferrer">View Repository</a>
+          </div>
+        </article>
+        <article class="project-card" data-tilt>
+          <div class="project-card__inner">
+            <h3>Arc Studio</h3>
+            <p>Creative coding toolkit for prototyping UI motion and exporting keyframe-ready animations.</p>
+            <a href="https://github.com/" class="project-card__link" target="_blank" rel="noreferrer">View Repository</a>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section id="contact" class="section contact">
-      <div class="section-heading">
-        <h2>Let’s build conviction-grade systems.</h2>
-        <p>Looking for a Solidity lead with market instincts, or a Pythonist who speaks in basis points? I’m listening.</p>
+    <section class="gallery" id="gallery">
+      <div class="panel__heading">
+        <span class="eyebrow">Gallery</span>
+        <h2>Dimensional concepts and prototypes.</h2>
       </div>
-      <div class="contact-grid">
-        <div class="contact-card">
-          <h3>Direct</h3>
-          <a href="mailto:hello@kamikaiten.dev">hello@kamikaiten.dev</a>
-        </div>
-        <div class="contact-card">
-          <h3>GitHub</h3>
-          <a href="https://github.com/KamiKaiten" target="_blank" rel="noreferrer">github.com/KamiKaiten</a>
-        </div>
-        <div class="contact-card">
-          <h3>Farcaster</h3>
-          <a href="https://warpcast.com/KamiKaiten" target="_blank" rel="noreferrer">warpcast.com/KamiKaiten</a>
-        </div>
+      <div class="gallery__items">
+        <figure class="gallery-card" data-depth="0.8">
+          <div class="gallery-card__shape gallery-card__shape--one"></div>
+          <figcaption>Algorithmic Sculpture</figcaption>
+        </figure>
+        <figure class="gallery-card" data-depth="0.6">
+          <div class="gallery-card__shape gallery-card__shape--two"></div>
+          <figcaption>Immersive Dashboard</figcaption>
+        </figure>
+        <figure class="gallery-card" data-depth="0.9">
+          <div class="gallery-card__shape gallery-card__shape--three"></div>
+          <figcaption>Specular Interface</figcaption>
+        </figure>
       </div>
+    </section>
+
+    <section class="panel panel--contact" id="contact">
+      <div class="panel__heading">
+        <span class="eyebrow">Contact</span>
+        <h2>Let's build something extraordinary.</h2>
+      </div>
+      <form class="contact-form">
+        <div class="form-row">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Jane Doe" required />
+        </div>
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required />
+        </div>
+        <div class="form-row">
+          <label for="message">Project details</label>
+          <textarea id="message" name="message" placeholder="Share your vision..." rows="5" required></textarea>
+        </div>
+        <button class="button button--primary" type="submit">Send message</button>
+      </form>
     </section>
   </main>
 
-  <footer class="footer">
-    <p>© <span id="year"></span> KamiKaiten · Built with curiosity, composability, and capital efficiency.</p>
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Your Name · Crafted with intention.</p>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
