@@ -212,6 +212,10 @@ main {
   gap: 16px;
 }
 
+.hero__actions .button {
+  min-width: 160px;
+}
+
 .button {
   display: inline-flex;
   align-items: center;
@@ -346,6 +350,60 @@ main {
   display: grid;
   gap: clamp(20px, 4vw, 36px);
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.resume__grid {
+  display: grid;
+  gap: clamp(24px, 4vw, 40px);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.resume-card {
+  background: rgba(8, 10, 20, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-sm);
+  padding: clamp(24px, 3vw, 34px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 18px 36px rgba(4, 6, 16, 0.45);
+  display: grid;
+  gap: 18px;
+}
+
+.resume-card h3 {
+  font-size: 1.3rem;
+}
+
+.resume-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 12px;
+}
+
+.resume-list li {
+  color: var(--text-dim);
+  line-height: 1.6;
+  position: relative;
+  padding-left: 20px;
+}
+
+.resume-list li::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: var(--accent-two);
+  opacity: 0.8;
+}
+
+.resume-list--columns {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.resume__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 4px;
 }
 
 .panel-card {
@@ -657,6 +715,14 @@ textarea {
 
   .hero__actions {
     justify-content: center;
+  }
+
+  .resume__cta {
+    flex-direction: column;
+  }
+
+  .resume__cta .button {
+    width: 100%;
   }
 }
 
