@@ -33,7 +33,9 @@
         <li><a href="#resume">Resume</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#contract-visions">Contract Visions</a></li>
         <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#playground">Playground</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -50,7 +52,8 @@
         <div class="hero__actions">
           <a class="button button--primary" href="#resume">View Resume</a>
           <a class="button button--ghost" href="https://github.com/KamiKaiten" target="_blank" rel="noreferrer">GitHub</a>
-          <a class="button button--ghost" href="https://warpcast.com/kamikaiten" target="_blank" rel="noreferrer">Farcaster</a>
+          <a class="button button--ghost" href="https://warpcast.com/kamikaiten" target="_blank" rel="noreferrer">Warpcast</a>
+          <a class="button button--accent" href="https://farcaster.xyz/solmidey" target="_blank" rel="noreferrer">Farcaster ID</a>
         </div>
       </div>
       <div class="hero__visual" aria-hidden="true">
@@ -230,6 +233,51 @@
       </div>
     </section>
 
+    <section class="panel panel--videos" id="contract-visions">
+      <div class="panel__heading">
+        <span class="eyebrow">Contract Visions</span>
+        <h2>Shortform simulations that showcase how my smart contracts come alive.</h2>
+      </div>
+      <div class="video-grid">
+        <article class="video-card">
+          <div class="video-card__media">
+            <video controls playsinline muted preload="metadata" data-contract-sequence="vault"></video>
+          </div>
+          <div class="video-card__body">
+            <h3>Intent-aware vault automation</h3>
+            <p>
+              Walkthrough of a Base-native vault contract orchestrating deposits, streaming yield to LPs, and
+              automatically hedging exposure across venues in real time.
+            </p>
+          </div>
+        </article>
+        <article class="video-card">
+          <div class="video-card__media">
+            <video controls playsinline muted preload="metadata" data-contract-sequence="perps"></video>
+          </div>
+          <div class="video-card__body">
+            <h3>Perps risk router</h3>
+            <p>
+              A Solidity flow illustrating how net exposure is capped, orders are netted, and risk parameters are
+              synced with governance snapshots across perps venues.
+            </p>
+          </div>
+        </article>
+        <article class="video-card">
+          <div class="video-card__media">
+            <video controls playsinline muted preload="metadata" data-contract-sequence="treasury"></video>
+          </div>
+          <div class="video-card__body">
+            <h3>Compliance aware treasury pipes</h3>
+            <p>
+              Visualizes a modular payment rail that screens addresses, batches payouts, and notarizes treasury events on
+              chain for downstream analytics.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
     <section class="gallery" id="gallery">
       <div class="panel__heading">
         <span class="eyebrow">Gallery</span>
@@ -248,6 +296,57 @@
           <div class="gallery-card__shape gallery-card__shape--three"></div>
           <figcaption>Risk Heatmaps</figcaption>
         </figure>
+      </div>
+    </section>
+
+    <section class="panel panel--playground" id="playground">
+      <div class="panel__heading">
+        <span class="eyebrow">Playground</span>
+        <h2>Mini games to stress-test your reflexes and onchain intuition.</h2>
+      </div>
+      <div class="game-grid">
+        <article class="game-card">
+          <h3>Gas Oracle Guess</h3>
+          <p>
+            Predict the base fee for the next block. Nail it exactly to secure the payload, or use the hints to get
+            closer.
+          </p>
+          <form class="game game--gas" id="gas-game">
+            <label class="sr-only" for="gas-guess">Your gas guess</label>
+            <div class="game__controls">
+              <input
+                id="gas-guess"
+                name="gas-guess"
+                type="number"
+                min="5"
+                max="200"
+                inputmode="numeric"
+                placeholder="Enter gwei"
+                required
+              />
+              <button class="button button--primary button--compact" type="submit">Send guess</button>
+              <button class="button button--ghost button--compact" type="button" data-action="reset">Reset round</button>
+            </div>
+            <p class="game__feedback" role="status" aria-live="polite"></p>
+          </form>
+        </article>
+        <article class="game-card">
+          <h3>Latency Tap Test</h3>
+          <p>Prime the sequencer, wait for the glow, then tap as fast as you can to measure blockfill reflexes.</p>
+          <div class="reaction-game">
+            <button class="button button--accent" type="button" id="reaction-start">Prime the network</button>
+            <div
+              class="reaction-pad"
+              id="reaction-pad"
+              role="button"
+              tabindex="0"
+              aria-label="Reaction pad"
+            ></div>
+            <p class="game__feedback" id="reaction-status" role="status" aria-live="polite">
+              Tap the pad once it pulses neon.
+            </p>
+          </div>
+        </article>
       </div>
     </section>
 
