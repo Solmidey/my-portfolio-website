@@ -97,3 +97,53 @@ if ('IntersectionObserver' in window) {
 } else {
   revealElements.forEach((el) => el.classList.add('is-visible'));
 }
+
+const contactForm = document.querySelector('.contact-form');
+
+if (contactForm) {
+  const statusElement = contactForm.querySelector('.form-status');
+  const submitButton = contactForm.querySelector('button[type="submit"]');
+  const endpoint = 'https://formsubmit.co/ajax/olorunfemiosolomon@gmail.com';
+
+  contactForm.addEventListener('submit', async (event) => {
+    if (!statusElement) return;
+
+    event.preventDefault();
+    statusElement.textContent = 'Sending message…';
+    statusElement.classList.remove('is-error');
+
+    if (submitButton) {
+      submitButton.disabled = true;
+    }
+
+    try {
+      const formData = new FormData(contactForm);
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: formData,
+      });
+
+      if (!response.ok) {
+        throw new Error(`Request failed with status ${response.status}`);
+      }
+
+      statusElement.textContent = 'Message sent! I will respond soon.';
+      contactForm.reset();
+
+      window.setTimeout(() => {
+        if (statusElement.textContent === 'Message sent! I will respond soon.') {
+          statusElement.textContent = '';
+        }
+      }, 8000);
+    } catch (error) {
+      statusElement.textContent = 'Something went wrong. Email me directly at olorunfemiosolomon@gmail.com.';
+      statusElement.classList.add('is-error');
+      console.error(error);
+    } finally {
+      if (submitButton) {
+        submitButton.disabled = false;
+      }
+    }
+  });
+}

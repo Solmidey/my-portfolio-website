@@ -102,6 +102,40 @@ img {
   background: radial-gradient(circle, rgba(255, 120, 180, 0.75) 0%, rgba(255, 120, 180, 0) 70%);
 }
 
+.backdrop__grid {
+  position: absolute;
+  left: -20vw;
+  right: -20vw;
+  bottom: -68vh;
+  height: 120vh;
+  background:
+    linear-gradient(transparent 0 60%, rgba(12, 16, 24, 0.9) 60%),
+    repeating-linear-gradient(0deg, rgba(127, 90, 240, 0.16) 0 2px, transparent 2px 80px),
+    repeating-linear-gradient(90deg, rgba(44, 177, 255, 0.16) 0 2px, transparent 2px 80px);
+  transform: perspective(1600px) rotateX(72deg);
+  transform-origin: 50% 0%;
+  opacity: 0.42;
+  mix-blend-mode: screen;
+  filter: blur(0.3px);
+  animation: gridPulse 14s ease-in-out infinite alternate;
+}
+
+.backdrop__poly {
+  position: absolute;
+  top: 22vh;
+  right: clamp(40px, 12vw, 220px);
+  width: clamp(140px, 18vw, 240px);
+  height: clamp(140px, 18vw, 240px);
+  background: linear-gradient(135deg, rgba(44, 177, 255, 0.4), rgba(127, 90, 240, 0.7));
+  clip-path: polygon(50% 0%, 92% 25%, 100% 72%, 62% 100%, 15% 82%, 0% 32%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 35px 60px rgba(8, 10, 20, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transform: rotateX(34deg) rotateY(-12deg) rotateZ(16deg);
+  opacity: 0.38;
+  mix-blend-mode: screen;
+  animation: polyFloat 10s ease-in-out infinite alternate;
+}
+
 .site-header {
   position: sticky;
   top: 0;
@@ -262,12 +296,45 @@ main {
   perspective: 1200px;
 }
 
+.hero__halo {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 0 60px rgba(127, 90, 240, 0.35), 0 0 40px rgba(44, 177, 255, 0.25);
+  mix-blend-mode: screen;
+  pointer-events: none;
+  opacity: 0.55;
+}
+
+.hero__halo::after {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: inherit;
+  background: conic-gradient(from 90deg, rgba(127, 90, 240, 0.65), rgba(44, 177, 255, 0.15), rgba(127, 90, 240, 0.65));
+  opacity: 0.45;
+  filter: blur(10px);
+}
+
+.hero__halo--outer {
+  width: clamp(360px, 50vw, 460px);
+  height: clamp(360px, 50vw, 460px);
+  animation: heroHalo 22s linear infinite;
+}
+
+.hero__halo--inner {
+  width: clamp(240px, 34vw, 320px);
+  height: clamp(240px, 34vw, 320px);
+  animation: heroHalo 18s linear infinite reverse;
+}
+
 .cube {
   width: clamp(220px, 32vw, 260px);
   height: clamp(220px, 32vw, 260px);
   position: relative;
   transform-style: preserve-3d;
   animation: cube-spin 18s infinite linear;
+  z-index: 2;
 }
 
 .cube__face {
@@ -299,11 +366,152 @@ main {
   filter: blur(45px);
   opacity: 0.6;
   transform: translateY(120px);
+  z-index: 0;
+}
+
+.hero__pyramid {
+  position: absolute;
+  bottom: -60px;
+  left: 12%;
+  width: 160px;
+  height: 160px;
+  transform-style: preserve-3d;
+  --pyramid-shift: 0;
+  transform: translateX(var(--pyramid-shift)) rotateX(28deg) rotateZ(-12deg);
+  animation: heroPyramid 18s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero__pyramid::after {
+  content: '';
+  position: absolute;
+  inset: 50% -10px auto -10px;
+  height: 12px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(44, 177, 255, 0.3), transparent 70%);
+  filter: blur(6px);
+}
+
+.hero__pyramid-face {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  background: linear-gradient(160deg, rgba(127, 90, 240, 0.65), rgba(44, 177, 255, 0.35));
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  opacity: 0.75;
+  transform-origin: 50% 100%;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.hero__pyramid-face--front {
+  transform: rotateY(0deg) translateZ(70px);
+}
+
+.hero__pyramid-face--back {
+  transform: rotateY(180deg) translateZ(70px);
+}
+
+.hero__pyramid-face--left {
+  transform: rotateY(-90deg) translateZ(70px);
+}
+
+.hero__pyramid-face--right {
+  transform: rotateY(90deg) translateZ(70px);
+}
+
+.hero__orbital {
+  position: absolute;
+  width: clamp(320px, 42vw, 420px);
+  height: clamp(320px, 42vw, 420px);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.hero__orbital::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1px solid rgba(127, 90, 240, 0.2);
+  box-shadow: 0 0 40px rgba(127, 90, 240, 0.25);
+  mix-blend-mode: screen;
+}
+
+.hero__orbital span {
+  --distance: clamp(140px, 18vw, 180px);
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  margin: -9px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.95), rgba(44, 177, 255, 0.4));
+  box-shadow: 0 0 16px rgba(44, 177, 255, 0.65);
+  animation: heroOrbit 16s linear infinite;
+}
+
+.hero__orbital span:nth-child(2) {
+  --distance: clamp(100px, 16vw, 140px);
+  width: 14px;
+  height: 14px;
+  margin: -7px;
+  animation-duration: 12s;
+  animation-delay: -3s;
+}
+
+.hero__orbital span:nth-child(3) {
+  --distance: clamp(70px, 12vw, 110px);
+  width: 10px;
+  height: 10px;
+  margin: -5px;
+  background: radial-gradient(circle, rgba(127, 90, 240, 0.95), rgba(44, 177, 255, 0.4));
+  animation-duration: 9s;
+  animation-delay: -6s;
 }
 
 @keyframes cube-spin {
   0% { transform: rotateX(0deg) rotateY(0deg); }
   100% { transform: rotateX(360deg) rotateY(360deg); }
+}
+
+@keyframes heroHalo {
+  0% { transform: rotateZ(0deg); }
+  100% { transform: rotateZ(360deg); }
+}
+
+@keyframes heroPyramid {
+  0% { transform: translateX(var(--pyramid-shift)) rotateX(28deg) rotateZ(-12deg) rotateY(0deg); }
+  100% { transform: translateX(var(--pyramid-shift)) rotateX(28deg) rotateZ(-12deg) rotateY(360deg); }
+}
+
+@keyframes heroOrbit {
+  0% { transform: rotate(0deg) translateX(var(--distance)) rotate(-0deg); }
+  100% { transform: rotate(360deg) translateX(var(--distance)) rotate(-360deg); }
+}
+
+@keyframes gridPulse {
+  0% {
+    opacity: 0.34;
+    transform: perspective(1600px) rotateX(70deg) translateY(0);
+  }
+  100% {
+    opacity: 0.5;
+    transform: perspective(1600px) rotateX(75deg) translateY(40px);
+  }
+}
+
+@keyframes polyFloat {
+  0% {
+    transform: rotateX(34deg) rotateY(-12deg) rotateZ(16deg) translateY(0px);
+  }
+  100% {
+    transform: rotateX(26deg) rotateY(-6deg) rotateZ(28deg) translateY(24px);
+  }
 }
 
 .panel {
@@ -658,6 +866,24 @@ textarea {
   resize: vertical;
 }
 
+.contact-form button[disabled] {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.form-status {
+  min-height: 22px;
+  margin: 4px 0 0;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: rgba(120, 255, 214, 0.9);
+}
+
+.form-status.is-error {
+  color: rgba(255, 120, 150, 0.95);
+}
+
 .site-footer {
   padding: 32px clamp(24px, 6vw, 96px) 60px;
   text-align: center;
@@ -715,6 +941,27 @@ textarea {
 
   .hero__actions {
     justify-content: center;
+  }
+
+  .hero__pyramid {
+    left: 50%;
+    --pyramid-shift: -50%;
+    bottom: -30px;
+  }
+
+  .hero__halo--outer {
+    width: min(340px, 80vw);
+    height: min(340px, 80vw);
+  }
+
+  .hero__halo--inner {
+    width: min(240px, 60vw);
+    height: min(240px, 60vw);
+  }
+
+  .hero__orbital {
+    width: min(300px, 72vw);
+    height: min(300px, 72vw);
   }
 
   .resume__cta {
