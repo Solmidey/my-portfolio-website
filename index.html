@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KamiKaiten | Solidity Engineer, Python Dev & Daytrader</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <nav class="nav">
+      <div class="logo">Kami<span>Kaiten</span></div>
+      <ul class="nav-links">
+        <li><a href="#portfolio">Builds</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#contact">Connect</a></li>
+      </ul>
+    </nav>
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="tag">Solidity Engineer · Python Dev · Daytrader</p>
+        <h1>Engineering resilient smart contracts and market-aware automation.</h1>
+        <p class="subtitle">From Base to Monad and zkSync, I ship performant onchain systems, Python-powered infrastructure, and trading strategies tuned for volatility.</p>
+        <div class="cta-group">
+          <a class="btn primary" href="#portfolio">Explore my work</a>
+          <a class="btn ghost" href="https://warpcast.com/KamiKaiten" target="_blank" rel="noreferrer">Farcaster</a>
+        </div>
+        <div class="achievement">
+          <span class="dot"></span>
+          <span>Base Builders Rewards recipient · Deployed on Monad &amp; zkSync</span>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="orbital">
+          <div class="orbit orbit--solidity">
+            <span>Smart Contract Audits</span>
+          </div>
+          <div class="orbit orbit--python">
+            <span>Algo Bots</span>
+          </div>
+          <div class="orbit orbit--trading">
+            <span>Market Signals</span>
+          </div>
+          <div class="core">KamiKaiten</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="portfolio" class="section portfolio">
+      <div class="section-heading">
+        <h2>Selected Builds</h2>
+        <p>Representative work spanning L2 deployments, automation, and trading intelligence.</p>
+      </div>
+      <div class="card-grid">
+        <article class="card">
+          <div class="card-tag">Solidity · Base</div>
+          <h3>Base Yield Router</h3>
+          <p>A modular smart contract system on Base that optimizes liquidity routing for onchain treasuries while tracking risk parameters in real time.</p>
+          <ul>
+            <li>Earned Base Builders Rewards for capital-efficient design</li>
+            <li>Upgradeable proxy architecture with circuit breakers</li>
+          </ul>
+          <a class="card-link" href="https://github.com/KamiKaiten/base-yield-router" target="_blank" rel="noreferrer">View repository →</a>
+        </article>
+
+        <article class="card">
+          <div class="card-tag">Python · Quant</div>
+          <h3>Serpentine Signals</h3>
+          <p>A Python-driven trade execution engine ingesting DeFi orderflow and macro feeds to rebalance perp positions with machine-tuned risk.</p>
+          <ul>
+            <li>Async architecture with FastAPI control surface</li>
+            <li>Backtesting suite covering 3,000+ permutations</li>
+          </ul>
+          <a class="card-link" href="https://github.com/KamiKaiten/serpentine-signals" target="_blank" rel="noreferrer">View repository →</a>
+        </article>
+
+        <article class="card">
+          <div class="card-tag">zkSync · Monad</div>
+          <h3>Cross-L2 Vault Network</h3>
+          <p>Composable vault contracts bridging Monad testnet and zkSync Era, focusing on verifiable proofs of reserves and deterministic execution.</p>
+          <ul>
+            <li>Zero-knowledge proof attestations with succinct verifiers</li>
+            <li>Gas-optimized state sync with batched updates</li>
+          </ul>
+          <a class="card-link" href="https://github.com/KamiKaiten/cross-l2-vaults" target="_blank" rel="noreferrer">View repository →</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section split" aria-labelledby="craft-title">
+      <div class="split-copy">
+        <h2 id="craft-title">Craft fueled by research, rigor, and real-time markets.</h2>
+        <p>I blend protocol-level craftsmanship with data-driven iteration. Years in the market taught me to architect systems that survive volatility, while my Solidity and Python stacks keep the pipelines fast, auditable, and future-proof.</p>
+        <div class="metrics">
+          <div class="metric">
+            <span class="metric-value">$250M+</span>
+            <span class="metric-label">Volume safeguarded via onchain risk controls</span>
+          </div>
+          <div class="metric">
+            <span class="metric-value">8ms</span>
+            <span class="metric-label">Average signal latency across trading venues</span>
+          </div>
+          <div class="metric">
+            <span class="metric-value">3</span>
+            <span class="metric-label">Layer 2s shipped to production</span>
+          </div>
+        </div>
+      </div>
+      <div class="split-visual">
+        <div class="terminal-card">
+          <header>analytics.py</header>
+          <pre><code>def pnl_heatmap(trades):
+    return (
+        trades
+        .groupby(["venue", "strategy"])
+        .apply(lambda df: df.pnl.cumsum())
+    )
+
+portfolio_risk = pnl_heatmap(trade_logs)
+rebalance(vaults, threshold=0.03)
+</code></pre>
+        </div>
+        <div class="chain-card">
+          <h3>Networks</h3>
+          <ul>
+            <li><span>Base</span><span>Production deployment</span></li>
+            <li><span>Monad</span><span>Mainnet-ready prototypes</span></li>
+            <li><span>zkSync Era</span><span>Zero-knowledge vault operations</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="resume" class="section resume">
+      <div class="section-heading">
+        <h2>Resume Snapshot</h2>
+        <p>Contract-ready blend of protocol engineering, Python automation, and trading acumen.</p>
+      </div>
+      <div class="resume-grid">
+        <div class="resume-column">
+          <h3>Core Skills</h3>
+          <ul class="pill-list">
+            <li>Solidity &amp; Foundry</li>
+            <li>Smart Contract Security</li>
+            <li>Python (FastAPI, Pandas, AsyncIO)</li>
+            <li>Strategy Backtesting &amp; Execution</li>
+            <li>DeFi Protocol Design</li>
+            <li>Onchain Analytics</li>
+          </ul>
+
+          <h3>Tooling &amp; Stack</h3>
+          <ul class="pill-list">
+            <li>Hardhat · Foundry</li>
+            <li>Docker · Terraform</li>
+            <li>Postgres · Redis · Arrow</li>
+            <li>Grafana · Dune · Flipside</li>
+            <li>Rust basics for runtime performance</li>
+            <li>GitHub Actions · CI/CD</li>
+          </ul>
+        </div>
+        <div class="resume-column">
+          <h3>Experience Highlights</h3>
+          <div class="timeline">
+            <div class="timeline-item">
+              <span class="timeline-date">2023 — Present</span>
+              <h4>Independent Solidity Engineer &amp; Quant Consultant</h4>
+              <p>Design and audit DeFi protocols, orchestrate cross-chain liquidity flows, and build execution engines for professional trading desks.</p>
+              <ul>
+                <li>Shipped production systems on Base, Monad, and zkSync</li>
+                <li>Delivered risk dashboards for funds managing 9-figure exposure</li>
+              </ul>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-date">2021 — 2023</span>
+              <h4>Lead Python Engineer · Algo Collective</h4>
+              <p>Architected low-latency trading infrastructure with hybrid onchain/offchain execution and automated treasury management.</p>
+              <ul>
+                <li>Cut slippage costs by 27% through adaptive routing</li>
+                <li>Implemented circuit breaker simulations for tail-risk hedging</li>
+              </ul>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-date">2018 — 2021</span>
+              <h4>Senior Daytrader · Self Directed</h4>
+              <p>Actively traded derivatives and spot markets, refining quantitative methods that now power automated DeFi strategies.</p>
+              <ul>
+                <li>Developed proprietary indicator suite with Python</li>
+                <li>Mentored traders in risk discipline and data literacy</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="resume-column">
+          <h3>Credentials &amp; Recognition</h3>
+          <ul class="pill-list">
+            <li>Base Builders Rewards · 2024</li>
+            <li>Top 5 finalist · Monad Launch Camp</li>
+            <li>zkSync Era Pioneer Program Alum</li>
+            <li>Published technical writer on smart contract security</li>
+            <li>Speaker · L2 Rollup Summit</li>
+          </ul>
+
+          <h3>Availability</h3>
+          <p>Open to protocol engineering roles, quant developer engagements, and high-impact smart contract audits. Remote-first with travel flexibility.</p>
+          <a class="btn primary" href="mailto:hello@kamikaiten.dev">Request full resume</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <div class="section-heading">
+        <h2>Let’s build conviction-grade systems.</h2>
+        <p>Looking for a Solidity lead with market instincts, or a Pythonist who speaks in basis points? I’m listening.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Direct</h3>
+          <a href="mailto:hello@kamikaiten.dev">hello@kamikaiten.dev</a>
+        </div>
+        <div class="contact-card">
+          <h3>GitHub</h3>
+          <a href="https://github.com/KamiKaiten" target="_blank" rel="noreferrer">github.com/KamiKaiten</a>
+        </div>
+        <div class="contact-card">
+          <h3>Farcaster</h3>
+          <a href="https://warpcast.com/KamiKaiten" target="_blank" rel="noreferrer">warpcast.com/KamiKaiten</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> KamiKaiten · Built with curiosity, composability, and capital efficiency.</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
