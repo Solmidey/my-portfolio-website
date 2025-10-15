@@ -233,78 +233,226 @@
       </div>
     </section>
 
-    <section class="panel panel--videos" id="contract-visions">
+    <section class="panel panel--storyboards" id="contract-visions">
       <div class="panel__heading">
         <span class="eyebrow">Contract Visions</span>
-        <h2>Shortform walkthroughs of the live products I've shipped.</h2>
+        <h2>Storyboard walkthroughs of how each protocol operates in practice.</h2>
+        <p class="panel__intro">
+          The following illustrated frames replace unavailable product videos. Each mock screen is crafted from semantic
+          HTML and CSS to simulate what operators, freelancers, and community members experience while using the deployed
+          contracts.
+        </p>
       </div>
-      <div class="video-grid">
-        <article class="video-card">
-          <div class="video-card__media">
-            <video
-              controls
-              playsinline
-              muted
-              loop
-              preload="metadata"
-              poster="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80"
-              data-contract-sequence="tradecast"
-            >
-              <source src="https://samplelib.com/lib/preview/mp4/sample-5s.mp4" type="video/mp4" />
-              <p>Your browser does not support HTML5 video. Here is a <a href="https://samplelib.com/lib/preview/mp4/sample-5s.mp4">link to the clip</a> instead.</p>
-            </video>
+      <div class="storyboard-grid">
+        <article class="storyboard-card">
+          <div
+            class="storyboard-card__screen storyboard-card__screen--tradecast"
+            role="img"
+            aria-label="TradeCast dashboard streaming Base intent mempool entries, vault telemetry charts, and Farcaster auto-cast status"
+          >
+            <header class="screen-header">
+              <span class="screen-title">TradeCast // Live Base</span>
+              <span class="screen-status screen-status--live">Auto-cast engaged</span>
+            </header>
+            <div class="screen-columns">
+              <section class="screen-panel screen-panel--sidebar">
+                <h4>Intent mempool</h4>
+                <ul class="screen-list">
+                  <li><span class="chip chip--buy">BUY</span> Vault ARB/MKR · 40.2k notional</li>
+                  <li><span class="chip chip--sell">SELL</span> Restake basket · 18.5k notional</li>
+                  <li><span class="chip chip--buy">BUY</span> ETH perps · 62.0k notional</li>
+                  <li><span class="chip chip--neutral">SYNC</span> Keeper bundle · 4 intents queued</li>
+                </ul>
+              </section>
+              <section class="screen-panel screen-panel--main">
+                <div class="screen-chart">
+                  <div class="screen-chart__line screen-chart__line--one"></div>
+                  <div class="screen-chart__line screen-chart__line--two"></div>
+                  <div class="screen-chart__grid"></div>
+                </div>
+                <div class="screen-ticker">
+                  <div class="screen-ticker__item">Vault PnL +3.7% ▲</div>
+                  <div class="screen-ticker__item">Latency 420ms</div>
+                  <div class="screen-ticker__item">Slippage &lt; 4bps</div>
+                </div>
+              </section>
+            </div>
+            <footer class="screen-footer">
+              <div class="screen-footer__log">
+                <span class="screen-dot"></span>
+                Cast queued to Farcaster: DeskDesk/real-trades/4321
+              </div>
+              <div class="screen-footer__log">
+                <span class="screen-dot screen-dot--pulse"></span>
+                Smart order router confirming vault leg executions
+              </div>
+            </footer>
           </div>
-          <div class="video-card__body">
+          <div class="storyboard-card__body">
             <h3>TradeCast V1 · Base market companion</h3>
             <p>
-              Screens through Base intent mempools, streams vault telemetry, and overlays execution stats so desk ops can
-              react to TradeCast's live market structure signals.
+              Operators monitor Base intents in real time while the system pipes confirmed executions straight to
+              Farcaster. The write-up covers how desk analysts skim mempool flow, read vault telemetry, and approve a
+              trade blast the moment the execution overlay shows green.
+            </p>
+            <ul class="storyboard-card__list">
+              <li>Left panel highlights Base intent mempool entries with notional sizing and routing mode.</li>
+              <li>Center chart overlays vault telemetry and orderfill speed for situational awareness.</li>
+              <li>Status footer mirrors the auto-cast bot pushing proof links to Warpcast communities.</li>
+            </ul>
+            <p class="storyboard-card__caption">
+              <strong>Illustrated frame:</strong> A desk operator watches TradeCast flag a profitable ETH perp entry and sees
+              the Farcaster broadcast queue confirm the trade share-out.
             </p>
           </div>
         </article>
-        <article class="video-card">
-          <div class="video-card__media">
-            <video
-              controls
-              playsinline
-              muted
-              loop
-              preload="metadata"
-              poster="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80"
-              data-contract-sequence="base-bounties"
-            >
-              <source src="https://samplelib.com/lib/preview/mp4/sample-10s.mp4" type="video/mp4" />
-              <p>Your browser does not support HTML5 video. Here is a <a href="https://samplelib.com/lib/preview/mp4/sample-10s.mp4">link to the clip</a> instead.</p>
-            </video>
+
+        <article class="storyboard-card">
+          <div
+            class="storyboard-card__screen storyboard-card__screen--bounties"
+            role="img"
+            aria-label="Base Bounties clearinghouse showing milestone escrow, builder submissions, and analytics cards"
+          >
+            <header class="screen-header">
+              <span class="screen-title">Base Bounties · Escrow Desk</span>
+              <span class="screen-status screen-status--review">Milestone 2 in review</span>
+            </header>
+            <div class="screen-columns">
+              <section class="screen-panel screen-panel--sidebar">
+                <h4>Milestones</h4>
+                <ol class="screen-list screen-list--ordered">
+                  <li><span>Spec approved</span><span class="badge badge--done">released</span></li>
+                  <li><span>Prototype demo</span><span class="badge badge--review">awaiting</span></li>
+                  <li><span>Mainnet deploy</span><span class="badge">queued</span></li>
+                </ol>
+                <div class="screen-wallet">
+                  <span>Escrow</span>
+                  <strong>78,400 USDC</strong>
+                </div>
+              </section>
+              <section class="screen-panel screen-panel--main">
+                <div class="screen-cards">
+                  <article class="screen-card">
+                    <h5>Trending briefs</h5>
+                    <p>Intent kit for Base merchants</p>
+                    <p>Walletless onboarding flow</p>
+                    <p>Institutional vault SDK</p>
+                  </article>
+                  <article class="screen-card">
+                    <h5>Builder submissions</h5>
+                    <p>@deltafour · ready for audit</p>
+                    <p>@novaeve · needs spec Q&amp;A</p>
+                    <p>@buidlbox · partial handoff</p>
+                  </article>
+                  <article class="screen-card screen-card--chart">
+                    <h5>Conversion</h5>
+                    <div class="screen-ring"></div>
+                    <span class="screen-card__stat">62% funded</span>
+                  </article>
+                </div>
+              </section>
+            </div>
+            <footer class="screen-footer">
+              <div class="screen-footer__log">
+                <span class="screen-dot"></span>
+                Builder @deltafour uploaded QA proof-of-work.
+              </div>
+              <div class="screen-footer__log">
+                <span class="screen-dot"></span>
+                Treasury stream releasing 24,000 USDC to milestone wallet.
+              </div>
+            </footer>
           </div>
-          <div class="video-card__body">
+          <div class="storyboard-card__body">
             <h3>Base Bounties V1 · Incentive clearinghouse</h3>
             <p>
-              Demonstrates milestone-based escrow, proposer approvals, and analytics that spotlight which Base bounty
-              threads are trending among builders.
+              Freelance coordinators run the Base-native escrow table, review milestone artifacts, and publish analytics
+              that reveal which bounty briefs are capturing builder attention. The visual narrative mirrors an ops lead
+              clearing a milestone and releasing funds once community votes land.
+            </p>
+            <ul class="storyboard-card__list">
+              <li>Stacked milestone tracker maps each escrow release to a Base smart wallet.</li>
+              <li>Analytics cards spotlight trending briefs and builder submissions needing feedback.</li>
+              <li>Footer log documents every treasury move for downstream DAO reporting.</li>
+            </ul>
+            <p class="storyboard-card__caption">
+              <strong>Illustrated frame:</strong> The Base Bounties desk marks milestone two "awaiting" as reviewers comb
+              through the prototype demo and ready a partial USDC unlock.
             </p>
           </div>
         </article>
-        <article class="video-card">
-          <div class="video-card__media">
-            <video
-              controls
-              playsinline
-              muted
-              loop
-              preload="metadata"
-              poster="https://images.unsplash.com/photo-1580894897854-1010c2294adc?auto=format&fit=crop&w=1200&q=80"
-              data-contract-sequence="tip-at-comment"
-            >
-              <source src="https://samplelib.com/lib/preview/mp4/sample-15s.mp4" type="video/mp4" />
-              <p>Your browser does not support HTML5 video. Here is a <a href="https://samplelib.com/lib/preview/mp4/sample-15s.mp4">link to the clip</a> instead.</p>
-            </video>
+
+        <article class="storyboard-card">
+          <div
+            class="storyboard-card__screen storyboard-card__screen--tip"
+            role="img"
+            aria-label="Tip at Comment bot console showing Farcaster cast parsing, reward dispatch, and audit log"
+          >
+            <header class="screen-header">
+              <span class="screen-title">Tip at Comment · Reward Bot</span>
+              <span class="screen-status screen-status--live">Listening for casts</span>
+            </header>
+            <div class="screen-columns">
+              <section class="screen-panel screen-panel--sidebar">
+                <h4>Incoming casts</h4>
+                <ul class="screen-list">
+                  <li>@craftmint: "Huge Base bounty shipped!"</li>
+                  <li>@orion: "Review thread w/ metrics"</li>
+                  <li>@loom: "Sharing testnet proof"</li>
+                  <li>@deskops: "Queueing gratitude"</li>
+                </ul>
+              </section>
+              <section class="screen-panel screen-panel--main">
+                <div class="screen-log">
+                  <div class="screen-log__row">
+                    <span class="chip chip--buy">DISPATCH</span>
+                    <span>Sent 25 USDC tip → @craftmint</span>
+                    <span class="screen-timestamp">14:03:52</span>
+                  </div>
+                  <div class="screen-log__row">
+                    <span class="chip chip--neutral">PARSE</span>
+                    <span>Webhook matched keyword: bounty shipping</span>
+                    <span class="screen-timestamp">14:03:47</span>
+                  </div>
+                  <div class="screen-log__row">
+                    <span class="chip chip--sell">ESCALATE</span>
+                    <span>Manual review requested by @modsquad</span>
+                    <span class="screen-timestamp">14:02:11</span>
+                  </div>
+                  <div class="screen-log__row">
+                    <span class="chip chip--buy">DISPATCH</span>
+                    <span>Sent 5 USDC micro-tip → @loom</span>
+                    <span class="screen-timestamp">14:01:32</span>
+                  </div>
+                </div>
+                <div class="screen-proof">
+                  <h5>Onchain proof</h5>
+                  <code>tx/0x88f3…9c12 confirmed · Base mainnet</code>
+                  <code>tx/0xb27a…ff41 pending · 2/3 confirmations</code>
+                </div>
+              </section>
+            </div>
+            <footer class="screen-footer">
+              <div class="screen-footer__log">
+                <span class="screen-dot screen-dot--pulse"></span>
+                Community audit mode active · 42 reward bursts logged today.
+              </div>
+            </footer>
           </div>
-          <div class="video-card__body">
+          <div class="storyboard-card__body">
             <h3>Tip at Comment V1 · Farcaster reward bot</h3>
             <p>
-              Shows the webhook listener parsing casts, dispatching onchain tips, and logging proof so community mods can
-              audit every reward burst.
+              Social mods tune the webhook listener, verify parsed casts, and watch automatic Base transfers reward helpful
+              comments. The illustrated console doubles as audit surface area for community oversight.
+            </p>
+            <ul class="storyboard-card__list">
+              <li>Live cast feed keeps moderators aware of which conversations triggered a bounty tip.</li>
+              <li>Action log reveals the precise sequencing of parse → dispatch → escalation events.</li>
+              <li>Proof module surfaces transaction hashes the DAO can reference for compliance.</li>
+            </ul>
+            <p class="storyboard-card__caption">
+              <strong>Illustrated frame:</strong> Tip at Comment pays @craftmint while simultaneously flagging another
+              reward burst for moderator review so the social graph stays trustworthy.
             </p>
           </div>
         </article>
