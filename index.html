@@ -14,6 +14,8 @@
     <div class="orb orb--one"></div>
     <div class="orb orb--two"></div>
     <div class="orb orb--three"></div>
+    <div class="backdrop__grid"></div>
+    <div class="backdrop__poly"></div>
   </div>
   <header class="site-header">
     <div class="brand">
@@ -52,6 +54,8 @@
         </div>
       </div>
       <div class="hero__visual" aria-hidden="true">
+        <div class="hero__halo hero__halo--outer"></div>
+        <div class="hero__halo hero__halo--inner"></div>
         <div class="cube">
           <div class="cube__face cube__face--front">SOL</div>
           <div class="cube__face cube__face--back">PY</div>
@@ -59,6 +63,17 @@
           <div class="cube__face cube__face--left">BASE</div>
           <div class="cube__face cube__face--top">AI</div>
           <div class="cube__face cube__face--bottom">RISK</div>
+        </div>
+        <div class="hero__pyramid">
+          <span class="hero__pyramid-face hero__pyramid-face--front"></span>
+          <span class="hero__pyramid-face hero__pyramid-face--back"></span>
+          <span class="hero__pyramid-face hero__pyramid-face--left"></span>
+          <span class="hero__pyramid-face hero__pyramid-face--right"></span>
+        </div>
+        <div class="hero__orbital">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
         <div class="hero__glow"></div>
       </div>
@@ -188,35 +203,28 @@
     <section class="panel panel--projects" id="projects">
       <div class="panel__heading">
         <span class="eyebrow">Projects</span>
-        <h2>Selected GitHub explorations.</h2>
+        <h2>Product drops that are live in the wild.</h2>
       </div>
       <div class="project-grid">
         <article class="project-card" data-tilt>
           <div class="project-card__inner">
-            <h3>Base Velocity Vault</h3>
-            <p>Composable Base vault strategy using intent-centric execution, dynamic fee curves, and automated hedging.</p>
-            <a href="https://github.com/KamiKaiten/base-velocity-vault" class="project-card__link" target="_blank" rel="noreferrer">View Repository</a>
+            <h3>TradeCast V1</h3>
+            <p>Onchain trading companion that streams Base market structure, intent flow, and real-time vault telemetry.</p>
+            <a href="https://github.com/Solmidey/TradeCast-V1" class="project-card__link" target="_blank" rel="noreferrer">View Repository</a>
           </div>
         </article>
         <article class="project-card" data-tilt>
           <div class="project-card__inner">
-            <h3>Pythonic Tradecraft</h3>
-            <p>Research notebooks and execution bots for day-trading desks leveraging option greeks and orderflow.</p>
-            <a href="https://github.com/KamiKaiten/pythonic-tradecraft" class="project-card__link" target="_blank" rel="noreferrer">View Repository</a>
+            <h3>Tip at Comment</h3>
+            <p>Farcaster-native tipping primitive that listens to comment webhooks and dispatches automated rewards onchain.</p>
+            <a href="https://github.com/Solmidey/tip-at-comment" class="project-card__link" target="_blank" rel="noreferrer">View Repository</a>
           </div>
         </article>
         <article class="project-card" data-tilt>
           <div class="project-card__inner">
-            <h3>Monad Meshnet</h3>
-            <p>Liquidity router framework and deterministic simulation harness for Monad testnet deployments.</p>
-            <a href="https://github.com/KamiKaiten/monad-meshnet" class="project-card__link" target="_blank" rel="noreferrer">View Repository</a>
-          </div>
-        </article>
-        <article class="project-card" data-tilt>
-          <div class="project-card__inner">
-            <h3>zkSync Signal Terminal</h3>
-            <p>Multi-venue risk dashboard streaming perp funding, cross-exchange spreads, and zkSync position health.</p>
-            <a href="https://github.com/KamiKaiten/zksync-signal-terminal" class="project-card__link" target="_blank" rel="noreferrer">View Repository</a>
+            <h3>Base Bounties Hub</h3>
+            <p>Curated Base bounty exchange with milestone tracking, proposer escrow, and builder discovery dashboards.</p>
+            <a href="https://github.com/Solmidey/Base-Bounties-V1" class="project-card__link" target="_blank" rel="noreferrer">View Repository</a>
           </div>
         </article>
       </div>
@@ -248,7 +256,10 @@
         <span class="eyebrow">Contact</span>
         <h2>Let's build something extraordinary.</h2>
       </div>
-      <form class="contact-form">
+      <form class="contact-form" action="https://formsubmit.co/olorunfemiosolomon@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New message from portfolio" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_template" value="table" />
         <div class="form-row">
           <label for="name">Name</label>
           <input type="text" id="name" name="name" placeholder="Jane Doe" required />
@@ -262,6 +273,7 @@
           <textarea id="message" name="message" placeholder="Share your vision..." rows="5" required></textarea>
         </div>
         <button class="button button--primary" type="submit">Send message</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
       </form>
     </section>
   </main>
