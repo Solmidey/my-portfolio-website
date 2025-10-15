@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Immersive Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="backdrop" aria-hidden="true">
+    <div class="orb orb--one"></div>
+    <div class="orb orb--two"></div>
+    <div class="orb orb--three"></div>
+  </div>
+  <header class="site-header">
+    <div class="brand">
+      <span class="brand__symbol">//</span>
+      <span class="brand__name">Your Name</span>
+    </div>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <button class="site-nav__toggle" aria-expanded="false" aria-controls="site-nav-menu">
+        <span class="sr-only">Toggle navigation</span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul id="site-nav-menu" class="site-nav__menu">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="hero__content">
+        <h1 class="hero__title">Crafting Immersive Digital Experiences</h1>
+        <p class="hero__subtitle">
+          I build high-impact products with delightful visuals, resilient architecture,
+          and thoughtful user experiences. Explore my world of code, creativity, and curiosity.
+        </p>
+        <div class="hero__actions">
+          <a class="button button--primary" href="#projects">View Projects</a>
+          <a class="button button--ghost" href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+      </div>
+      <div class="hero__visual" aria-hidden="true">
+        <div class="cube">
+          <div class="cube__face cube__face--front">JS</div>
+          <div class="cube__face cube__face--back">CSS</div>
+          <div class="cube__face cube__face--right">HTML</div>
+          <div class="cube__face cube__face--left">UI</div>
+          <div class="cube__face cube__face--top">3D</div>
+          <div class="cube__face cube__face--bottom">UX</div>
+        </div>
+        <div class="hero__glow"></div>
+      </div>
+    </section>
+
+    <section class="panel" id="about">
+      <div class="panel__heading">
+        <span class="eyebrow">About</span>
+        <h2>Design-minded engineer focused on timeless craftsmanship.</h2>
+      </div>
+      <div class="panel__grid">
+        <article class="panel-card">
+          <h3>Philosophy</h3>
+          <p>
+            I blend storytelling and technology to design interfaces that resonate. Every component is
+            crafted to feel intuitive, authentic, and inspiring.
+          </p>
+        </article>
+        <article class="panel-card">
+          <h3>Expertise</h3>
+          <p>
+            Full-stack web development, creative coding, design systems, accessibility, product strategy,
+            immersive 3D experiences, and data visualisation.
+          </p>
+        </article>
+        <article class="panel-card">
+          <h3>Focus for 2024</h3>
+          <p>
+            Expanding frontier knowledge in WebGL, machine learning powered UX, and sustainable design practices
+            to craft inclusive products at scale.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="timeline" id="experience">
+      <div class="panel__heading">
+        <span class="eyebrow">Experience</span>
+        <h2>Shaping products for ambitious teams.</h2>
+      </div>
+      <div class="timeline__items">
+        <article class="timeline-item">
+          <div class="timeline-item__marker"></div>
+          <div class="timeline-item__content">
+            <h3>Lead Product Engineer · Aurora Labs</h3>
+            <p class="timeline-item__meta">2022 — Present</p>
+            <p>
+              Driving strategy and delivery for a platform used by 2M+ creators. Led the transition to a modular
+              design system and orchestrated 3D visualisations for live data dashboards.
+            </p>
+          </div>
+        </article>
+        <article class="timeline-item">
+          <div class="timeline-item__marker"></div>
+          <div class="timeline-item__content">
+            <h3>Senior UX Engineer · Nebula Collective</h3>
+            <p class="timeline-item__meta">2019 — 2022</p>
+            <p>
+              Crafted story-driven, interactive product tours with rich motion design and accessibility-first workflows.
+              Shipped scalable component libraries adopted across five product suites.
+            </p>
+          </div>
+        </article>
+        <article class="timeline-item">
+          <div class="timeline-item__marker"></div>
+          <div class="timeline-item__content">
+            <h3>Creative Developer · Freelance</h3>
+            <p class="timeline-item__meta">2016 — 2019</p>
+            <p>
+              Partnered with global brands to launch immersive campaigns using Three.js, AR experiences, and spatial audio.
+              Recognised with 4 Awwwards honours and a CSS Design Award.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel panel--projects" id="projects">
+      <div class="panel__heading">
+        <span class="eyebrow">Projects</span>
+        <h2>Selected GitHub explorations.</h2>
+      </div>
+      <div class="project-grid">
+        <article class="project-card" data-tilt>
+          <div class="project-card__inner">
+            <h3>PulseWave</h3>
+            <p>An open-source WebGL audio visualiser with generative shaders and live performance mode.</p>
+            <a href="https://github.com/" class="project-card__link" target="_blank" rel="noreferrer">View Repository</a>
+          </div>
+        </article>
+        <article class="project-card" data-tilt>
+          <div class="project-card__inner">
+            <h3>Atlas UI</h3>
+            <p>A composable design system built with accessibility, theming, and developer happiness in mind.</p>
+            <a href="https://github.com/" class="project-card__link" target="_blank" rel="noreferrer">View Repository</a>
+          </div>
+        </article>
+        <article class="project-card" data-tilt>
+          <div class="project-card__inner">
+            <h3>Voyager</h3>
+            <p>Interactive globe visualisation that layers satellite data, weather patterns, and travel analytics.</p>
+            <a href="https://github.com/" class="project-card__link" target="_blank" rel="noreferrer">View Repository</a>
+          </div>
+        </article>
+        <article class="project-card" data-tilt>
+          <div class="project-card__inner">
+            <h3>Arc Studio</h3>
+            <p>Creative coding toolkit for prototyping UI motion and exporting keyframe-ready animations.</p>
+            <a href="https://github.com/" class="project-card__link" target="_blank" rel="noreferrer">View Repository</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="gallery" id="gallery">
+      <div class="panel__heading">
+        <span class="eyebrow">Gallery</span>
+        <h2>Dimensional concepts and prototypes.</h2>
+      </div>
+      <div class="gallery__items">
+        <figure class="gallery-card" data-depth="0.8">
+          <div class="gallery-card__shape gallery-card__shape--one"></div>
+          <figcaption>Algorithmic Sculpture</figcaption>
+        </figure>
+        <figure class="gallery-card" data-depth="0.6">
+          <div class="gallery-card__shape gallery-card__shape--two"></div>
+          <figcaption>Immersive Dashboard</figcaption>
+        </figure>
+        <figure class="gallery-card" data-depth="0.9">
+          <div class="gallery-card__shape gallery-card__shape--three"></div>
+          <figcaption>Specular Interface</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="panel panel--contact" id="contact">
+      <div class="panel__heading">
+        <span class="eyebrow">Contact</span>
+        <h2>Let's build something extraordinary.</h2>
+      </div>
+      <form class="contact-form">
+        <div class="form-row">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Jane Doe" required />
+        </div>
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required />
+        </div>
+        <div class="form-row">
+          <label for="message">Project details</label>
+          <textarea id="message" name="message" placeholder="Share your vision..." rows="5" required></textarea>
+        </div>
+        <button class="button button--primary" type="submit">Send message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Your Name · Crafted with intention.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
