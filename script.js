@@ -586,10 +586,26 @@ if (contractVideos.length) {
   };
 
   contractVideos.forEach((video) => {
+    const container = video.parentElement;
+    const hasExternalSource = Boolean(video.getAttribute('src') || video.querySelector('source[src]'));
+
+    if (hasExternalSource) {
+      if (container) {
+        const markLoaded = () => {
+          container.classList.add('is-loaded');
+        };
+        if (video.readyState >= 2) {
+          markLoaded();
+        } else {
+          video.addEventListener('loadeddata', markLoaded, { once: true });
+        }
+      }
+      return;
+    }
+
     if (supportsCapture) {
       synthesizeClip(video);
     } else if (canvasSupport) {
-      const container = video.parentElement;
       if (!container) return;
       const fallback = createFallbackCanvas(video.dataset.contractSequence || 'vault');
       container.replaceChild(fallback, video);
