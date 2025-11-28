@@ -80,7 +80,9 @@ const revealElements = document.querySelectorAll('.panel, .timeline-item, .proje
 
 revealElements.forEach((el) => el.classList.add('will-reveal'));
 
-const showAll = () => revealElements.forEach((el) => el.classList.add('is-visible'));
+const showAll = () => {
+  revealElements.forEach((el) => el.classList.add('is-visible'));
+};
 
 if (!('IntersectionObserver' in window)) {
   showAll();
@@ -100,7 +102,6 @@ if (!('IntersectionObserver' in window)) {
 
     revealElements.forEach((el) => observer.observe(el));
   } catch (error) {
-    console.error(error);
     showAll();
   }
 }
