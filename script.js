@@ -80,22 +80,29 @@ const revealElements = document.querySelectorAll('.panel, .timeline-item, .proje
 
 revealElements.forEach((el) => el.classList.add('will-reveal'));
 
-if ('IntersectionObserver' in window) {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.2 }
-  );
+const showAll = () => revealElements.forEach((el) => el.classList.add('is-visible'));
 
-  revealElements.forEach((el) => observer.observe(el));
+if (!('IntersectionObserver' in window)) {
+  showAll();
 } else {
-  revealElements.forEach((el) => el.classList.add('is-visible'));
+  try {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    revealElements.forEach((el) => observer.observe(el));
+  } catch (error) {
+    console.error(error);
+    showAll();
+  }
 }
 
 const contactForm = document.querySelector('.contact-form');
